@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @task.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @task.age %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @task.phone %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

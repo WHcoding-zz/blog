@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happy</title>
+    <%= csrf_meta_tags %>
+
+	<!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="http://henjifeng.cc:3000/assets/bootstrap/bootstrap.min.css"> -->
+	<%= stylesheet_link_tag  '/assets/bootstrap/bootstrap.min'%>
+    <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application",'data-turbolinks-track': 'reload' %>
+    <script src="/assets/jquery/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/bootstrap/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <%#= javascript_include_tag "/assets/jquery/jquery-1.9.1","/assets/bootstrap/bootstrap.min",'data-turbolinks-track': 'reload' %>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+
+	
+<!-- <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- 	<mce:script language="javascript" type="text/javascript" src="js/prototype.js" mce_src="js/prototype.js"></mce:script>  
+	<mce:script language="javascript" type="text/javascript" src="js/scriptaculous.js?load=effects" mce_src="js/scriptaculous.js?load=effects"></mce:script>  
+	<mce:script  language="javascript">
+	function clickMe(element){  
+	    new Effect.Highlight(element,  
+	    { startcolor:'#ffff00',  
+	      endcolor:'#ffffff',  
+	      duration: 2  
+	       
+	});  
+	}  
+	//</mce:script>  -->
+</head>
+<body>
+	<style type="text/css">
+/*		*{
+		margin: 0;padding: 0;
+		}
+		body{
+		background: #333;font-family: "Helvetica Neue",Helvetica,"microsoft yahei",STHeiTi,sans-serif;
+		}*/
+		h1,.ceshi{
+		color: green;font-size: 5em;font-weight: normal;
+		background: -webkit-repeating-radial-gradient(left, #000000,#167993 50%, #00ff00 75%);
+		background-size: 200% 100%;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-animation: mask 1s  infinite linear;
+		}
+		/******不太想做IE等浏览器的兼容的分割线******/
+		@-webkit-keyframes mask {
+		0% { background-position: 0 0;}
+		100% { background-position: -100% 0;}
+		}
+/*		p{
+		width: 100%;height: 80px;line-height: 80px;text-align: center;color: #999;margin: 50px auto;font-size: 2em;
+		background-image: -webkit-linear-gradient(left, #999, #999 5%,#fff 10%, #999 15%, #999);
+		background-size: 200%;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-animation: anim 3s infinite;
+		}*/
+/*		@-webkit-keyframes anim{
+		0%{
+		background-position: 0 0;
+		}
+		100%{
+		background-position: -100% 0;
+		}
+		}*/
+	</style>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#example-navbar-collapse">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://www.henjifeng.cc:3000/">菜鸟教程</a>
+			</div>
+			<div class="collapse navbar-collapse" id="example-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="http://www.henjifeng.cc:3000/tasks">Tasks</a></li>
+					<li><a href="http://www.henjifeng.cc:3000/products">Products</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Other
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="http://www.henjifeng.cc:3000/people">People</a></li>
+							<li><a href="http://www.henjifeng.cc:3000/details">Detail</a></li>
+							<li><a href="#">Jasper Report</a></li>
+							<li class="divider"></li>
+							<li><a href="#">分离的链接</a></li>
+							<li class="divider"></li>
+							<li><a href="#">另一个分离的链接</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav user-bar navbar-right">	
+				  <li class="nav-search hidden-xs hidden-sm">
+<!-- 				    <form class="navbar-form form-search active" action="" method="GET">
+				      <div class="form-group">
+				      	<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+				      </div>
+				    </form> -->
+				        <input class="form-control search-query" name="index-search" type="text" value="<%= params[:q] %>" placeholder="搜索本站内容" onchange="indexSearch()" />
+				  </li>
+				  </ul>
+			</div>
+		</div>
+	</nav>
+
+	
+<!-- 	<div class="col left-column" style="display: block;">
+	<div class="tab">HTML 教程</div>
+	<div class="sidebar-box gallery-list">
+		<div class="design" id="leftcolumn">
+			<a target="_top" title="HTML 教程" href="http://www.runoob.com/html/html-tutorial.html" style="background-color: rgb(150, 185, 125); font-weight: bold; color: rgb(255, 255, 255);">
+			HTML 教程			</a>
+						<a target="_top" title="HTML 简介" href="http://www.runoob.com/html/html-intro.html">
+			HTML 简介			</a>
+						<a target="_top" title="HTML 编辑器" href="http://www.runoob.com/html/html-editors.html">
+			HTML 编辑器			</a>
+						<a target="_top" title="HTML 基础" href="http://www.runoob.com/html/html-basic.html">
+			HTML 基础			</a>
+		</div>
+	</div>	
+
+
+
+	<div class="col middle-column">
+	</div> -->
+
+
+
+
+    <%= yield %>
+<!-- 	<div id="fade" style="width:200px;height:20px;"> 测试</div>  
+ 	      <form id="form1" method="post">
+      <div id="root" style="left:20px; top:20px;">
+           <div id="news" onclick="changeColor()">
+           欢迎使用黄腿技术
+           </div>
+      </div> 
+      </form>
+	****************JavaScript脚本*******************
+	<script language="javascript">
+	var speed = 1;//颜色渐变速度 
+	var timers;//定时器对象数组
+	news.style.backgroundColor = "#ffff00";
+	news.style.cursor = "hand";
+	// return false;
+	timers = setTimeout("changeColor()",10000);
+	function changeColor()
+	{
+	     var color = news.style.backgroundColor;
+	     var color_rg = color.slice(1,5);//获得rgb之rg部分
+	     var color_b = parseInt(color.slice(5),16) + speed;//获得rgb之b部分,转换为十进制然后加一个整数向白色靠近
+
+	     if(color_b < 256)
+	     {
+	       var b1 = Math.floor((color_b / 16)).toString(16);//转换为b的16进制
+	       var b2 = (color_b % 16).toString(16);
+	  
+	       news.style.backgroundColor = "#" + color_rg + b1 + b2;//设置新的颜色
+	       timers = setTimeout("changeColor()",100); 
+	     }
+	     else
+	     {
+	        clearTimeout(timers);//褪色完毕,停止计时器
+	     }
+	}
+	</script>
+	********************************************* --> 
+  </body>
+</html>

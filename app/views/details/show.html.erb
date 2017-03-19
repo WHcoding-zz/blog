@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @detail.title %>
+</p>
+
+<p>
+  <strong>Work hours:</strong>
+  <%= @detail.work_hours %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @detail.description %>
+</p>
+
+<%= link_to 'Edit', edit_detail_path(@detail) %> |
+<%= link_to 'Back', details_path %>
